@@ -68,6 +68,12 @@ After the brief, ALWAYS append exactly this line on a new line:
    - 저장 경로: 현재 프로젝트 폴더 안에 /output/ 폴더 생성 후 저장
    - python-docx가 설치 안 되어 있으면 pip install python-docx 먼저 실행할 것
    - 저장 완료 후 "파일이 저장되었습니다: [파일경로]" 메시지 출력
+9. 브리프 생성 완료 후, Word 저장(Rule 8)과 별개로 동일한 브리프 본문을 마크다운 아카이브로도 저장할 것 (git 버전관리용)
+   - 저장 위치: 프로젝트 폴더의 `docs/briefs/`
+   - 파일명 형식: `브리프_[고객사명]_[YYYYMMDD].md` (같은 고객사·같은 날짜에 추가 미팅이면 `_2`, `_3` 등을 붙임)
+   - 저장 내용: 화면에 출력한 고정 포맷 브리프 본문 그대로 (출처/참고 링크 포함, 마감 문구 "수정할 부분 있으면 말씀해주세요!"는 파일에 포함하지 않아도 됨)
+   - Write 도구로 저장하며, `docs/briefs/`가 없으면 생성. 저장 후 경로를 안내할 것
+   - 포맷·저장 규칙 참고: `docs/briefs/README.md`, `docs/briefs/_TEMPLATE.md`
 
 **Update your agent memory** as you discover recurring patterns while generating briefs. This builds up institutional knowledge across conversations. Write concise notes about what you found and where.
 

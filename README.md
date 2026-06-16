@@ -23,8 +23,15 @@
 ```
 callPrepBrief_project/
 ├─ .claude/
-│  └─ agents/        # 프로젝트 종속 에이전트 정의
-├─ docs/             # 문서화 결과물 (작업 중)
+│  └─ agents/             # 프로젝트 종속 에이전트 정의
+├─ docs/
+│  ├─ 시스템_가이드.md     # 4개 에이전트 워크플로우·입출력·사용법
+│  └─ briefs/             # 생성된 콜 프렙 브리프 아카이브
+│     ├─ _TEMPLATE.md     # 브리프 고정 포맷 빈 템플릿
+│     └─ README.md        # 저장 규칙(파일명·출처 보존)
+├─ output/               # 브리프 .docx 산출물 (에이전트 자동 생성)
 ├─ .gitignore
 └─ README.md
 ```
+
+자세한 워크플로우와 사용법은 [`docs/시스템_가이드.md`](./docs/시스템_가이드.md)를 참고하세요.
