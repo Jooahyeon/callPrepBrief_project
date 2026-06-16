@@ -1,0 +1,15 @@
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor
+.vscode/
+*.swp
+
+# Claude Code local settings (개인 설정/권한 — 공유 제외)
+.claude/settings.local.json
+
+# Logs / temp
+*.log
+tmp/
