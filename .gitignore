@@ -13,6 +13,10 @@ Desktop.ini
 # Brief .docx 산출물 (바이너리 — git 추적은 docs/briefs/*.md 로 대체)
 output/
 
+# Python
+__pycache__/
+*.pyc
+
 # Logs / temp
 *.log
 tmp/

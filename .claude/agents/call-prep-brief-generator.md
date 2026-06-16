@@ -78,11 +78,16 @@ After the brief, ALWAYS append exactly this line on a new line:
    - 저장 내용: 화면 출력과 100% 동일한 고정 포맷 본문 (출처/참고 링크 포함). 마감 문구 "수정할 부분 있으면 말씀해주세요!"는 파일에 포함하지 않아도 됨
    - Write 도구로 저장하며 `docs/briefs/`가 없으면 생성. 저장 후 경로를 안내할 것
    - 포맷·저장 규칙 참고: `docs/briefs/README.md`, `docs/briefs/_TEMPLATE.md`
-9. 위 마크다운 저장(Rule 8) 후, 추가로 동일 본문을 python-docx로 Word 파일로도 저장할 것 (공유용 산출물)
-   - 파일명 형식: `브리프_[고객사명]_[YYYYMMDD].docx` (Rule 8과 동일한 베이스명)
-   - 저장 경로: 프로젝트 폴더 안에 `output/` 폴더 생성 후 저장
-   - python-docx가 설치 안 되어 있으면 `pip install python-docx` 먼저 실행할 것. 설치/실행에 실패하면 그 사실을 명확히 보고하고 마크다운 저장은 그대로 유지할 것
-   - 저장 완료 후 "파일이 저장되었습니다: [파일경로]" 메시지 출력
+9. 위 마크다운 저장(Rule 8) 후, **디자인이 적용된 Word(.docx)·PDF 공유용 산출물**을 함께 생성할 것
+   - 생성 방법: 저장한 .md 경로를 인자로 변환 스크립트를 실행한다 —
+     `python scripts/render_brief.py "docs/briefs/브리프_[고객사명]_[YYYYMMDD].md"`
+   - 이 스크립트가 고정 포맷 본문을 파싱해 제목/메타박스/섹션 헤더/Q&A/목록에 글꼴·색상·여백 서식을 입혀 `output/` 폴더에 `.docx`와 `.pdf`를 동일 베이스명으로 생성한다 (맑은 고딕 폰트, 한글 정상 출력, MS Word 불필요).
+   - 의존성(`python-docx`, `fpdf2`)이 없으면 `pip install python-docx fpdf2` 먼저 실행할 것
+   - 실패 케이스 처리:
+     - 대상 .docx/.pdf가 열려 있어 `PermissionError`가 나면 → 사용자에게 해당 파일을 닫아달라고 안내한 뒤 재실행
+     - 그 외 실패 시 그 사실을 명확히 보고하되 마크다운(.md) 저장은 그대로 유지할 것
+   - 내용은 화면 출력·`.md`와 100% 동일해야 하며, 서식만 추가한다 (텍스트 가감 금지)
+   - 저장 완료 후 "파일이 저장되었습니다: [.docx 경로], [.pdf 경로]" 메시지 출력
 
 **Update your agent memory** as you discover recurring patterns while generating briefs. This builds up institutional knowledge across conversations. Write concise notes about what you found and where.
 
